@@ -1,15 +1,17 @@
 import { getProjects } from "@/sanity/sanity-utils";
+// import Header from "./components/Header";
+import Interaction from "./components/Interaction";
+import Gallery from "./components/Gallery";
 
 export default async function Home() {
   const projects = await getProjects();
-  console.log(projects);
-
-  console.log("hello");
 
   return (
     <div>
+      <Interaction />
+      <Gallery />
       {projects.map((project) => (
-        <div key={project._id}>{project.name}</div>
+        <div key={project._id}></div>
       ))}
     </div>
   );

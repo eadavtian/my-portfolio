@@ -1,8 +1,16 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Josefin_Sans } from "next/font/google";
 import "./globals.css";
+import Header from "./components/Header";
 
-const inter = Inter({ subsets: ["latin"] });
+import {} from "next/font/google";
+import Footer from "./components/Footer";
+
+const josefinSans = Josefin_Sans({
+  family: "Josefin Sans",
+  weights: ["100", "300", "600"],
+  subsets: ["latin"],
+});
 
 export const metadata: Metadata = {
   title: "eadavtian",
@@ -16,7 +24,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={josefinSans.className}>
+        <Header />
+        {children}
+        <Footer />
+      </body>
     </html>
   );
 }
